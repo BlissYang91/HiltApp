@@ -18,8 +18,12 @@ class MainActivity : AppCompatActivity() {
     //从组件获取依赖项，请使用 @Inject 注释执行字段注入
     @Inject lateinit var analytics: AnalyticsAdapter
 
+    @Inject
+    lateinit var diTest: DITest//去找它的构造方法实例化对象
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        diTest.test()
     }
 }
